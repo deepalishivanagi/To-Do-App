@@ -1,0 +1,11 @@
+.main {
+    width: 30%;
+}
+
+.SingleNote-main {
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid black;
+    height: 9rem;
+    margin: 0rem 0.5rem;
+}

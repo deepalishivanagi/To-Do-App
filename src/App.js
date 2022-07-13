@@ -3,8 +3,21 @@ import './App.css';
 import ToDoInputBox from './ToDoInputBox';
 import ActiveNotes from './ActiveNotes';
 import DeletedNotes from './DeletedNotes';
+import { useState } from 'react';
 
 function App() {
+
+  const [NotesTakenArray,setNotesTakenArray]=useState([]);
+
+  function AddtoNotesArray(message){
+    var TempArray=JSON.parse(JSON.stringify(NotesTakenArray));
+    TempArray.push({content:message});
+    console.log(TempArray);
+    setNotesTakenArray(TempArray);
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +25,7 @@ function App() {
       </header>
       <div>
      
-        <ToDoInputBox/>
+        <ToDoInputBox  AddtoNotesArray={AddtoNotesArray}/>
       </div>
       <hr></hr>
       <div>
