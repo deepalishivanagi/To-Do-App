@@ -1,17 +1,17 @@
 import { StaticNotesData } from "./StaticNotesData";
 import SingleNote from "./SingleNote";
 
-export default function DeletedNotes(){
+export default function DeletedNotes(props){
     var ShowDeletedNotes=[];
 
-    for(let i=0;i<StaticNotesData.length;i++)
+    for(let i=0;i<props.NotesTakenArray.length;i++)
     {
-        if(StaticNotesData[i].delete==1)
+        if(props.NotesTakenArray[i].delete==1)
         {
-            ShowDeletedNotes.push(StaticNotesData[i]);
+            ShowDeletedNotes.push(props.NotesTakenArray[i]);
         }
     }
-    console.log(ShowDeletedNotes)
+    console.log(ShowDeletedNotes);
 
     return(
         <div>
