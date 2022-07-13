@@ -17,7 +17,7 @@ export default function ActiveNotes(props)
 
     return(
         <div>
-            <p>This will show list of active notes</p>
+            <h3>This will show list of active notes</h3>
             <div className="Active-notes-list">
                 {ShowActiveNotes.map((Notes,index)=>{ return(<SingleNote Notes={Notes} key={index} active={true} ActiveDeleteHandler={props.ActiveDeleteHandler}/>);})}
                 

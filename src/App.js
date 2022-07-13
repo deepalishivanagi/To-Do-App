@@ -33,6 +33,34 @@ function App() {
     setNotesTakenArray(TempArray);
   }
 
+  function DeletedRecoverHandler(id){
+    var TempArray=JSON.parse(JSON.stringify(NotesTakenArray));
+    for(let i=0;i<NotesTakenArray.length;i++)
+    {
+      if(NotesTakenArray[i].id==id)
+      {
+        TempArray[i].delete=0;
+        TempArray[i].recover=1;
+        break;
+      }
+    }
+    setNotesTakenArray(TempArray);
+  }
+
+  function PermanentDeleteHandler(id){
+    var TempArray=JSON.parse(JSON.stringify(NotesTakenArray));
+    for(let i=0;i<NotesTakenArray.length;i++)
+    {
+      if(NotesTakenArray[i].id==id)
+      {
+        TempArray[i].delete=0;
+        TempArray[i].recover=0;
+        break;
+      }
+    }
+    setNotesTakenArray(TempArray);
+
+  }
 
 
   return (
@@ -49,7 +77,7 @@ function App() {
       </div>
       <hr></hr>
       <div>    
-        <DeletedNotes NotesTakenArray={NotesTakenArray}/>
+        <DeletedNotes NotesTakenArray={NotesTakenArray} DeletedRecoverHandler={DeletedRecoverHandler} PermanentDeleteHandler={PermanentDeleteHandler}/>
       </div>
     </div>
   );

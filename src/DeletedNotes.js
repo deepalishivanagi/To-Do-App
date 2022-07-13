@@ -1,4 +1,4 @@
-import { StaticNotesData } from "./StaticNotesData";
+import './DeletedNotes.css';
 import SingleNote from "./SingleNote";
 
 export default function DeletedNotes(props){
@@ -15,9 +15,10 @@ export default function DeletedNotes(props){
 
     return(
         <div>
-            <p>This will show list of deleted notes</p>
+            <h3>This will show list of deleted notes</h3>
             <div className="deleted-notes-list">
-                {ShowDeletedNotes.map((Notes,index)=>{ return(<SingleNote Notes={Notes} key={index} active={false}/>);})}
+                {ShowDeletedNotes.map((Notes,index)=>{ return(<SingleNote Notes={Notes} key={index} active={false} DeletedRecoverHandler={props.DeletedRecoverHandler} 
+                PermanentDeleteHandler={props.PermanentDeleteHandler}/>);})}
                 
             </div>
         </div>
